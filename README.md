@@ -11,7 +11,6 @@ More importantly, the language and information here are my own, and I do not rep
 * **Vala** is a computer programming language used mostly to develop GTK+ applications. It is also used to write libraries and APIs.
 * **GTK+** is a toolkit for developing Graphical User Interface (GUI) applications. With GTK+, you can develop applications that has buttons, text inputs, labels, switches, images, etc. with which you can use to interact with the application.
 * You can learn Vala by visiting [HERE](link.com) or GTK+ by visiting [Horace Abenga's website](http://www.abenga.com/postseries/introduction-to-gtk+-programming-using-vala/).
-***
 
 ## Contents
 * Chapter One: Introduction to Tools and Resources
