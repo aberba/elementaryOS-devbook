@@ -38,10 +38,10 @@ There are many Source code Version Control Systems available for management your
 * GNU debugger: a tools for [debugging](wikipedia.org) your code
 
 ### Development APIs and libraries
-Must have development resources include the `Granite` framework, Contractor API, GDA.
+The official development APIs/libraries include the `Granite`, `Contractor API`, `GDA` and `Soup`.
 ![elementary OS Official APIs](images/elementaryos-apis.png)
 
-Several other libraries are available for use depending on the feature you want to to implement in your application (Networking, Video and Audio processing, etc.). A list of available APIs along with their documentation can be found at [valadoc.org](valadoc.or).
+Several other libraries are available for use depending on the feature you want to to implement in your application (Networking, Video and Audio processing, etc.). A list of available APIs along with their documentation can be found at [valadoc.org](valadoc.org).
 
 Tools available for designing (wireframing, mock-up, icons) include;
 
@@ -50,6 +50,14 @@ Tools available for designing (wireframing, mock-up, icons) include;
 * [Gimp](gimp.net): Another libre bitmap image editing software used for photo manipulation. While making your designs, you can use gimp to resize, crop, and apply filters on you images.
 
 Others tools you may need include a sketch book for initial sketching of your designs and flow chart.
+
+### Other tools
+
+Tool Name | Description | Website
+----- | ----- | -----
+cmake | -
+debian packaging | - | -
+GTranlator / Poedit | - | -
 
 
 ## Learning resources
@@ -64,4 +72,4 @@ Learning resources are those resources available to you for learning how you can
     * Abenga's website
 
 ### Beginners
-The are those providing by elementary
+The are those providing by for ...

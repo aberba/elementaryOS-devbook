@@ -6,17 +6,17 @@ Welcome to an unofficial guide to help you develop your application for `element
 
 More importantly, the language and information here are my own, and I do not represent any organization or `elementary LLC.` in anyway.
 
-***
-### Side Notes
-* **Vala** is a computer programming language used mostly to develop GTK+ applications. It is also used to write libraries and APIs.
-* **GTK+** is a toolkit for developing Graphical User Interface (GUI) applications. With GTK+, you can develop applications that has buttons, text inputs, labels, switches, images, etc. with which you can use to interact with the application.
-* You can learn Vala from the [Gnome Website Tutorial](https://developer.gnome.org/gnome-devel-demos/stable/beginner.vala.html.en) and GTK+ by visiting [Horace Abenga's website](http://www.abenga.com/postseries/introduction-to-gtk+-programming-using-vala/).
+>
+> #### Side Notes
+> * **Vala** is a computer programming language used mostly to develop GTK+ applications. It is also used to write libraries and APIs.
+> * **GTK+** is a toolkit for developing Graphical User Interface (GUI) applications. With GTK+, you can develop applications that has buttons, text inputs, labels, switches, images, etc. with which you can use to interact with the application.
+> * You can learn Vala from the [Gnome Website Tutorial](https://developer.gnome.org/gnome-devel-demos/stable/beginner.vala.html.en) and GTK+ by visiting [Horace Abenga's website](http://www.abenga.com/postseries/introduction-to-gtk+-programming-using-vala/).
 
 ## Contents
-* Chapter One: Introduction to Tools and Resources
-    * Development tools and resources
-    * Learning resources
-    * Setting up your development environment
+* [Chapter One: Introduction to Tools and Resources](chapter-01.md)
+    - [x] Development tools and resources
+    - [ ] Learning resources
+    - [ ] Setting up your development environment
 *  Chapter Two: Designing Your Application (UI and UX)
     * Brainstorming :)
     * Wireframing your (UI, UX flow chart)
