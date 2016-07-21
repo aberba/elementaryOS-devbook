@@ -20,10 +20,10 @@ There are many text editors and IDEs available for vala application development,
 * Scratch Text Editor: It is the default text editor pre-installed in elementary OS. It has vala code highlighting by default and basic auto-completion.
 ![Scratch Text Editor](images/scratch.png)
 
-* [Sublime Text](sublimetext.com): A fast and lightweight text editor with code intellisense that make coding less tedious. It has vala code highlighting support through the `Vala-TMBundle` plugin found in sublime text editor [package control](sublimetext.com).
+* [Sublime Text](sublimetext.com): A fast and lightweight text editor with code intellisense that make coding less tedious. It has vala code highlighting support through the `Vala-TMBundle` plug-in found in sublime text editor [package control](sublimetext.com).
 ![Sublime Text Editor](images/sublime-text.png)
 
-* [Atom Text Editor](atom.io): Similar in functionality compared to sublime text but with an improved UI and feature packed, an easy point and click package management system well supported with a lot of packages. It has vala support through the `language-vala` and `Valhalla` packages/plugins. Downside is that it can be slow on low-end computer because it built with HTML, CSS and JavaScript.
+* [Atom Text Editor](atom.io): Similar in functionality compared to sublime text but has an improved UI: feature packed with an easy-to-use point-and-click package management system, well supported with a lot of packages. It has vala support through the `language-vala` and `Valhalla` packages/plug-ins. Downside is that it can be slow on low-end computer because it built with HTML, CSS and JavaScript.
 ![Atom Text Editor](images/atom-text-editor.png)
 
 * [Gnome Builder](gnome.org): An IDE designed for developing Gnome Software with good vala support by default including code highlighting, build support good auto-completion, and devhelp integration.
@@ -37,25 +37,31 @@ There are many Source code Version Control Systems available for management your
 * Git: another source control system
 * GNU debugger: a tools for [debugging](wikipedia.org) your code
 
-### development APIs and libraries
+### Development APIs and libraries
 Must have development resources include the `Granite` framework, Contractor API, GDA.
 ![elementary OS Official APIs](images/elementaryos-apis.png)
 
 Several other libraries are available for use depending on the feature you want to to implement in your application (Networking, Video and Audio processing, etc.). A list of available APIs along with their documentation can be found at [valadoc.org](valadoc.or).
 
-Tools avalable for designing (wireframing, mock-up, icons) include;
+Tools available for designing (wireframing, mock-up, icons) include;
 
 * [Inkscape](inkscape.org): A libre vector drawing software commonly use by the elementary community for designing. It can be use for wireframing, mocking-up prototypes and icon designs.
 
-* [Gimp](gimp.net): Another libre bimap image editing sofware used for photo manipulation. While making your designs, you can use gimp to resize, crop, and apply filters on you images.
+* [Gimp](gimp.net): Another libre bitmap image editing software used for photo manipulation. While making your designs, you can use gimp to resize, crop, and apply filters on you images.
 
-*
-
-Others you may need include a sketch book for initial sketching of your designs and flow chart.
+Others tools you may need include a sketch book for initial sketching of your designs and flow chart.
 
 
 ## Learning resources
 Learning resources are those resources available to you for learning how you can use the various development tools and resources to develop your application. Not all the resources provided are intended for elementary OS application developers and you may have to do transfer of knowledge in some cases.  
+
+    * valadoc
+    * devhelp
+    * launchpad code
+    * Github code
+    * developer.gnome.org tutorials
+    * YouTube videos
+    * Abenga's website
 
 ### Beginners
 The are those providing by elementary
