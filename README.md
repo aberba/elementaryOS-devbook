@@ -19,8 +19,8 @@ More importantly, the language and information here are my own, and I do not rep
     * Setting up your development environment
 *  Chapter Two: Designing Your Application (UI and UX)
     * Brainstorming :)
-    * Wireframing and prototyping
-    * Mocking up
+    * Wireframing your (UI, UX flow chart)
+    * Mocking up a prototype.
     * Finalizing your designs
 *  Chapter Three: Coding Your Application (Tutorials)
     * Creating and structuring your project
