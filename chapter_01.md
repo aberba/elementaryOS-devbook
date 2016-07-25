@@ -31,14 +31,13 @@ There are many text editors and IDEs available for vala application development,
 
 
 ### 1.1.2 Source Code Management Systems and other tools.
-There are many resources available for management your application source code. Those provided here are the commonly by developers. 
+There are many resources available for managing your application source code. Those provided here are the commonly used by developers. 
 
 #### Source Code Version Control Systems (DVCS/VCS)
-* Launchpad: A free online service for hosting code online, collaborative development and many more.
+* Launchpad: A free online service for hosting code online, collaborative development and many more. It is used officially for developing elementary OS and its applications. 
 * Bazaar: A distributed version control system of interacting with launchpad.
-* Git: another source control system
-* Github: A remotely hosted source code control system used in conjunction with `Git` to manage source code and more. It offers several functionality to assist project collaboration. 
-
+* Git: a distributed version control system that is used for software development and other version control tasks
+* [GitHub](https://github.com) is a web-based Git repository hosting service. It offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.It offers several functionality to assist project collaboration. 
 #### Other tools
 
 ##### Design tools (wireframing, mock-up, icons) 
