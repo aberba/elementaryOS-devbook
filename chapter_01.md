@@ -85,3 +85,7 @@ The are unofficial tutorials by third-parties;
 
 #### Video tutorials
 Coming soon ;)
+
+
+## Setting up your development environment
+This section will help you set up your computer with the necessary tools and resources to get your computer ready for development. 
