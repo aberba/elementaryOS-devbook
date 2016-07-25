@@ -13,7 +13,7 @@ Note that the language and information here are my own opinion, and I do not rep
 > * You can learn Vala from the [Gnome Website Tutorial](https://developer.gnome.org/gnome-devel-demos/stable/beginner.vala.html.en) and GTK+ by visiting the [Gnome Vala Wiki](https://wiki.gnome.org/Projects/Vala/Tutorial) or [Horace Abenga's website](http://www.abenga.com/postseries/introduction-to-gtk+-programming-using-vala/)
 
 ## Contents
-* [Chapter One: Introduction to Tools and Resources](chapter-01.md)
+* [Chapter One: Introduction to Tools and Resources](chapter_01.md)
     - [x] Development tools and resources
     - [x] Learning resources
     - [ ] Setting up your development environment
