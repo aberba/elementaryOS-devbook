@@ -38,10 +38,10 @@ There are many text editors and IDEs available for vala application development,
 There are many resources available for managing your application source code. Those provided here are the commonly used by developers.
 
 #### Source Code Version Control Systems (DVCS/VCS)
-* Launchpad: A free online service for hosting code online, collaborative development and many more. It is used officially for developing elementary OS and its applications.
-* Bazaar: A distributed version control system for interacting with launchpad.
-* Git: a distributed version control system that is used for software development and other version control tasks
-* [GitHub](https://github.com) is a web-based Git repository hosting service. It offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features.It offers several functionality to assist project collaboration.
+* [Launchpad](https://launchpad.net): A free online service for hosting code online, collaborative development and many more. It is used officially for developing elementary OS and its applications.
+* [Bazaar](https://bazaar.launchpad.net)[FIX LINK]: A distributed version control system for interacting with launchpad.
+* [Git](http://git-scm.com): a source code management system which you ca use to manage your code during development and other version control tasks.
+* [GitHub](https://github.com) is a web-based Git repository hosting service. It offers all of the distributed revision control and source code management (SCM) functionality of Git as well as adding its own features. It offers several functionality to assist project collaboration.
 #### Other tools
 
 ##### Design tools (wireframing, mock-up, icons)
@@ -59,8 +59,8 @@ There are many resources available for managing your application source code. Th
 * [Debian packaging system](https://wiki.debian.org/Packaging): A packaging system used for generating `.deb` packages of your application.  
 
 
-### 1.1.3 Development APIs and libraries
-The [official development APIs/libraries](http://elementary.io/developer) include the `Granite`, `Contractor`, `GDA` and `Soup`.
+### 1.1.3 Development libraries
+The [official development libraries](http://elementary.io/developer) include the `Granite`, `Contractor`, `GDA` and `Soup`.
 ![elementary OS Official APIs](images/elementaryos-apis.png)
 
 Several other libraries are available for use depending on the feature you want to to implement in your application (Networking, Video and Audio processing, etc.). A list of available APIs along with their documentation can be found at [valadoc.org](valadoc.org).
@@ -68,19 +68,19 @@ Several other libraries are available for use depending on the feature you want 
 
 
 ## 1.2 Learning resources
-Learning resources are those resources available to you for learning how you can use the various development tools and resources to develop your application. Not all the resources provided here were intended for elementary OS application developers and you may have to do transfer of knowledge in some cases.  
+Learning resources are those resources available to you for learning how you can use the various development tools and resources to develop your application. Not all the resources provided were intended for elementary OS application developers and you may have to do transfer of knowledge in some cases.  
 
 ### 1.2.1 Documentations
-Since this guide assumes that you already know GTK+ and vala, those documented resources for provide here are geared towards elementary OS application development.
+Since this guide assumes that you already know GTK+ and vala, those documented resources provided here are geared towards elementary OS application development.
 
 * The **Developers section of elementary OS website**: This is the first resources to checkout if you want to develop for elementary OS. It has a [Getting Stated Tutorial](https://elementary.io/docs/code/getting-started), the official [Human Interface Guidelines](https://elementary.io/docs/human-interface-guidelines), and a [Reference Material](https://elementary.io/docs/code/reference). Make sure you have **REALLY** gone through all those materials before you even consider reading any other learning resource. You may need to read over and over again to make sure you familiarise yourself with elementary OS application development work-flow.
 * [Valadoc](valadoc.org): A great documentation resource for elementary OS development libraries, as well as, other libraries available for developing vala applications. It has documentation for almost all the libraries you would ever need when developing your application. Valadoc is available as an online tool but can be clone from [Github](https://github.com/flobrosch/valadoc-org) and hosted locally on your computer.
-* Applications Source Code: A great way to learn something is by learning from those who know how to do it. By browsing through the source code of vala applications built for elementary OS, especially official applications, you learn a lot from their respective developers. Official application projects are hosted in Launchpad can be found [here](https://launchpad.net/elementary). With Bazaar installed (`sudo apt install bzr`), you can branch/clone an application in Launchpad by entering `bzr branch lp:APP_ID` in you terminal, where `APP_ID` is the application ID. For example, entering `bzr branch lp:noise` will cone the official music application called ___Noise___.
+* **Applications Source Code**: A great way to learn something is by learning from those who already know how to do it. By browsing through the source code of vala applications built for elementary OS, especially official applications, you learn a lot from their respective developers. Official application projects are hosted in Launchpad can be found [here](https://launchpad.net/elementary). With Bazaar installed (`sudo apt install bzr`), you can branch/clone an application in Launchpad by entering `bzr branch lp:APP_ID` in you terminal, where `APP_ID` is the application ID. For example, entering `bzr branch lp:noise` will clone the official music application called ___Noise___.
 
 
 ### 1.2.2 Tutorials
 #### Written tutorials
-The are unofficial tutorials by third-parties;
+These are unofficial tutorials by third-parties;
 
 * [eos.doodlespark.ca](http://eos.doodlespark.ca) provides a work-in-progress developer guide on the Granite framework accompanied with demo code and detailed explanation. It also has an [Icon Guide](icon names list: http://eos.doodlespark.ca/?p=icon-guide) for GTK+ icon names along with their `elementary theme` icons, grouped according to their respective categories.
 * [ Christopher Timberlake's tumblr blog](http://game64.tumblr.com) has a blog post titled ***So you want to develop for elementary OS?*** which takes you through the process of creating a demo Granite application with a `cmake` build system with detailed step by step explanation.
@@ -90,5 +90,5 @@ The are unofficial tutorials by third-parties;
 Coming soon ;)
 
 
-## Setting up your development environment
+## 1.3 Setting up your development environment
 This section will help you set up your computer with the necessary tools and resources to get your computer ready for development.
