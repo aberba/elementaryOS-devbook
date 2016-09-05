@@ -76,7 +76,7 @@ Learning resources are those resources available to you for learning how you can
 
 ### 1.2.1 Documentations
 
-Since this guide assumes that you already know (at least basic) GTK+ and vala, those documented resources provided here are geared towards elementary OS application development. 
+Since this guide assumes that you already know (at least basic) GTK+ and vala, those documented resources provided here are geared towards elementary OS application development.
 
 - The **Developers section of elementary OS website**: This is the first resources to check out if you want to develop for elementary OS. It has a [Getting Stated Tutorial](https://elementary.io/docs/code/getting-started), the official [Human Interface Guidelines](https://elementary.io/docs/human-interface-guidelines), and a [Reference Material](https://elementary.io/docs/code/reference). Make sure you have **REALLY** gone through all those materials before you even consider reading any further or other learning resource. You may need to read over and over again to make sure you familiarise yourself with elementary OS application development work-flow.
 - [Valadoc](http://valadoc.org): A great documentation resource for elementary OS development libraries, as well as, other libraries available for developing vala applications. It has documentation for almost all the libraries you would ever need when developing your application. Valadoc is available as an online tool but can be clone from [Github](https://github.com/flobrosch/valadoc-org) and hosted locally on your computer.
@@ -114,7 +114,7 @@ Download and install Sublime Text Editor (Version 3) from <http://sublimetext.co
 To install using the package manager make sure you have Internet connection since the packages will be fetched from the package control from a remote server.
 
 - Go to <http://pakagelink.com>, copy the piece of code from the ....[FIX THIS],
-- Open Sublime on your computer and paste the code in the Console entry box displayed by pressing `Ctrl + [back-tick]` on your keyboard or `View > Show Console` from the menu. 
+- Open Sublime on your computer and paste the code in the Console entry box displayed by pressing `Ctrl + [back-tick]` on your keyboard or `View > Show Console` from the menu.
 - Press `Enter` and wait for the script to configure the package control. After successful configuration, Sublime is now be ready to install the `Vala-TMBundle` package as well as any other package in the future right from the text editor.
 - You can now display the Package Control by pressing `Ctrl + Shift + P` or `Preferences > Package Control`. Using the Up or Down key on your keyboard, navigate to `Install Package` and press Enter. Wait for Package Control to fetch the list of packages from the remote server (this may take some few seconds depending on your Internet connection speed). When all the packages are fetched, you will see the list of packages in the Package Control dialog displayed at the upper middle corner in the Sublime.
 - Search for `Vala-TMBundle` using the search entry within the dialog, navigate to the Vala-TMBundle package, press Enter to install it. You are now ready to start coding with sublime :)
@@ -132,12 +132,11 @@ Installing packages in Atom Text Editors is much easy and straight forward compa
 - Wait for Atom to fetch for the list for available packages and search for `language-vala` and `Valhalla` and install both. You may also want to install the `terminal-plus` package to get a terminal within Atom. You are now ready to start coding with Atom.
 
 ### Using valadoc documentation offline
+
 Using valadoc.org requires that you have persistent Internet connection. However, there are two ways you can use the valadoc offline: (1) running valadoc on a local server on your computer or (2) downloading compressed HTML documentation files for each individual library you would like to use.
 
 To use run a local server for valadoc visit their [Github repository](https://github.com/flobrosch/valadoc-org) where they have instructions on how to do that. To download compressed html documentation files, visit valadoc.org and scroll down to the your library of choice and click on the `Download documentation`[FIX ME] to download a compressed copy of the documentation of that library. You can now extract the contents of the downloaded file which contains the HTML documentation files.
 
-> ### Tip to convert any web page to PDF 
+> ### Tip to convert any web page to PDF
+
 > Saving web pages as HTML files could make your directories cluttered. You could instead save any web page as PDF right from you browser by pressing `Ctrl + P` as if you are printing the page and then click on `Print to File` from the print dialog. Choose where you want to save the file as PDF and click print to save.
-
-
-
