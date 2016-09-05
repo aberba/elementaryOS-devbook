@@ -117,11 +117,11 @@ To install using the package manager make sure you have Internet connection sinc
 - Open Sublime on your computer and paste the code in the Console entry box displayed by pressing `Ctrl + [back-tick]` on your keyboard or `View > Show Console` from the menu. 
 - Press `Enter` and wait for the script to configure the package control. After successful configuration, Sublime is now be ready to install the `Vala-TMBundle` package as well as any other package in the future right from the text editor.
 - You can now display the Package Control by pressing `Ctrl + Shift + P` or `Preferences > Package Control`. Using the Up or Down key on your keyboard, navigate to `Install Package` and press Enter. Wait for Package Control to fetch the list of packages from the remote server (this may take some few seconds depending on your Internet connection speed). When all the packages are fetched, you will see the list of packages in the Package Control dialog displayed at the upper middle corner in the Sublime.
-- Search for `Vala-TMBundle` using the search entry within the dialog, navigate to the Vala-TMBundle packages, press Enter to install it. You are now ready to start coding with sublime :)
+- Search for `Vala-TMBundle` using the search entry within the dialog, navigate to the Vala-TMBundle package, press Enter to install it. You are now ready to start coding with sublime :)
 
 ##### Installing packages manually in Sublime
 
-To install `Vala-TMBundle` manually, go to the Github repository of the package at <https://githublinkfor-pakage.com>[FIX THIS LINK] and download the package source by clicking on green `Clone` button and then the `Download Package zip`[FIX THIS] link. Open Sublime and click on `Preferences > Browse Packages` from the main menu. This will open the location where Sublime packages are installed in your file manager. Unzip the `Vala-TMBundle` archive and copy the unzipped copy into `User` directory within the package install location. Restart sublime and you are ready to go :)
+To install `Vala-TMBundle` manually, go to the Github repository of the package at <https://github.com>[FIX THIS LINK] and download the package source by clicking on green `Clone` button and then the `Download Package zip`[FIX THIS] link. Open Sublime and click on `Preferences > Browse Packages` from the main menu. This will open the location where Sublime packages are installed in your file manager. Unzip the `Vala-TMBundle` archive and copy the unzipped copy (the whole folder) into `User` directory within the package install location. Restart sublime and you are ready to go :)
 
 #### Installing and configuring Atom text editor
 
@@ -132,11 +132,11 @@ Installing packages in Atom Text Editors is much easy and straight forward compa
 - Wait for Atom to fetch for the list for available packages and search for `language-vala` and `Valhalla` and install both. You may also want to install the `terminal-plus` package to get a terminal within Atom. You are now ready to start coding with Atom.
 
 ### Using valadoc documentation offline
-Using valadoc requires that you have persistent Internet connection. However, there are two ways you can use the valadoc offline: (1) running valadoc on a local server on your computer or (2) downloading compressed HTML documentation files for each individual library you would like to use.
+Using valadoc.org requires that you have persistent Internet connection. However, there are two ways you can use the valadoc offline: (1) running valadoc on a local server on your computer or (2) downloading compressed HTML documentation files for each individual library you would like to use.
 
 To use run a local server for valadoc visit their [Github repository](https://github.com/flobrosch/valadoc-org) where they have instructions on how to do that. To download compressed html documentation files, visit valadoc.org and scroll down to the your library of choice and click on the `Download documentation`[FIX ME] to download a compressed copy of the documentation of that library. You can now extract the contents of the downloaded file which contains the HTML documentation files.
 
-> ### Tip to convert any webpage to PDF 
+> ### Tip to convert any web page to PDF 
 > Saving web pages as HTML files could make your directories cluttered. You could instead save any web page as PDF right from you browser by pressing `Ctrl + P` as if you are printing the page and then click on `Print to File` from the print dialog. Choose where you want to save the file as PDF and click print to save.
 
 
