@@ -60,7 +60,7 @@ There are many resources available for managing your application source code. Th
 
 - [GTranlator](https://wiki.gnome.org/Apps/Gtranslator) or [Poedit](https://poedit.net): Tools designed for translating software into different languages using language string template files (.pot, .po, etc.).
 
-- [cmake](http://www.cmake.org/): a cross-platform build system used officially in all elementary OS applications. We will use a version of cmake modules managed by the elementary apps team. Use `bzr branch lp:~elementary-os/+junk/cmake-modules` to grab a copy onto you local computer.
+- [cmake](http://www.cmake.org): a cross-platform build system used officially in all elementary OS applications. We will use a version of cmake modules managed by the elementary apps team. Use `bzr branch lp:~elementary-os/+junk/cmake-modules` to grab a copy onto you local computer.
 
 - [Debian packaging system](https://wiki.debian.org/Packaging): A packaging system used for generating `.deb` packages of your application.
 
