@@ -33,6 +33,7 @@ You can create wireframes using the vector drawing program, *Inkscape*, availabl
 A mock-up is a drawing that serve as a visual representation of an application in it's complete state. A well designed mock-up visually appear like the final product and you may even be tempted to click :smile:. Creating a mock-up can be time-consuming and requires good illustration skills to be able to draw "the real thing". 
 
 ![Sample mock-up](images/app-mock-up.png)
+Mock-up of Dictopia, a sample application built in Chapter Three.
 
 Creating good mock-ups requires familiarizing yourself with the various GTK+ and Granite widgets, the [Official Brand](https:elementary.io/brand), and the [Human Interface Guidelines](https://elementary.io/docs/human-interface-guidelines). These will guide you to create a design that visually fits well in the ecosystem of applications designed for elementary OS. Mocking-up your application might be time consuming but not as much as the time it takes to write the actual code, only to realize you need to change the design.
 

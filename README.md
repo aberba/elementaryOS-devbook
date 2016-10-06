@@ -31,7 +31,7 @@ Note that the language and information here are my own opinion, and I do not rep
 
   - [] Creating and structuring a project
   - [] Diving into Vala and GTK+
-  - [] Using the Granite framework
+  - [] Using the Granite extension
   - [] Using the cmake build system
   - [] Developing sample applications
 
