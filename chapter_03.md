@@ -18,14 +18,14 @@ An project is combination of source files, configuration files and graphics, str
 ```sh
 demo-app/
         src/
-            Application.vala    
+            main.vala    
 ```
 
 As you can see, the `demo-app` directory being the project root has a sub-directory, `src`, which contains a single file named `main.vala`. Inside the `src` directory is where all Vala source files will be placed. This is the most basic structure project could have. We will add more directories to the project root as we expand our basic application. The `main.vala` file will contain the initial code of the application which will server as entry point.
 
 Now that we have the project structure set-up, it is time to install the _development libraries_ as provided in the official elementary OS [Getting Stated Tutorial](https://elementary.io/docs/code/getting-started#development-libraries). 
 
-You can install the development libraries in your terminal using `sudo apt build-dep granite-demo`. As indicated in [Chapter One](chapter_01.md), there a several development tools available for development. I will be working on elementary OS 0.4, Loki, using Scratch (the default text editor) and Terminal —  all are pre-installed.
+You can install the development libraries in your terminal using `sudo apt build-dep granite-demo`. As indicated in [Chapter One](chapter_01.md), there a several development tools available for development. I will be working on elementary OS 0.4 Loki, using Scratch (the default text editor) and Terminal —  all are pre-installed.
 
 ## Diving into Vala and GTK+
 
@@ -80,7 +80,7 @@ Using `Gtk.init ()` and `Gtk.main ()` to initialize and run a GTK+ application w
 
 The Granite.Application class is the base class of all Granite-based applications and it adds more functionality on-top of Gtk.Application. `Granite.Application` is customised for elementary OS application development so it is _highly_ recommended to use it instead of `Gtk.Application.
 
-To make the use of `Granite.Application` more practical, we will be creating a basic dictionary application called `Dictopia`. Building Dictopia will provide a real-world development experience. The wireframe and mock-up of Dictopia was already demonstrated in Chapter Two, so we will go ahead to the coding part. We could put all the code in the `main.vala` file, but it is much convenient to write it in a  separate file. This style of coding introduces [Object Oriented Programming]()[FIX LINK] and is in-line with the elementary OS reference guide. Create a new file named `Application.vala` in the `src` directory. The contents of the file is prefixed with the [GPL legal header](https://elementary.io/docs/code/reference#gpl-header) <sup>^</sup>;
+To make the use of `Granite.Application` more practical, we will be creating a basic dictionary application called `Dictopia`. Building Dictopia will provide a real-world development experience. The wireframe and mock-up of Dictopia was already demonstrated in Chapter Two, so we will go ahead to the coding part. We could put all the code in the `main.vala` file, but it is much convenient to write it in a  separate file. This style of coding introduces [Object Oriented Programming](https://chebizarro.gitbooks.io/the-vala-manual/content/en/object_oriented_programming.html) and is in-line with the elementary OS reference guide. Create a new file named `Application.vala` in the `src` directory. The contents of the file is prefixed with the [GPL legal header](https://elementary.io/docs/code/reference#gpl-header) <sup>^</sup>;
 
 ```txt
 /* 
@@ -107,7 +107,7 @@ To make the use of `Granite.Application` more practical, we will be creating a b
 
 This declares that this code is backed by the GPL license. Make sure you replace the name, email address and website URL with your own.
 
-> ^ Usually, a source code has a legal backing which states the author and the legal restrictions placed on the usage of the source code. There are several [licensing options]()[FIX LINK] available and you are free to choose any for your code. I however, will use the [GPL license](http://www.gnu.org/licenses/) for all source code in this guide.
+> ^ Usually, a source code has a legal backing which states the author and the legal restrictions placed on the usage of the source code. There are several [licensing options](https://en.wikipedia.org/wiki/Software_license) available and you are free to choose any for your code. I however, will use the [GPL license](https://www.gnu.org/licenses/) for all source code in this guide.
 
 After the license, you can then add the following code;
 
@@ -158,11 +158,11 @@ namespace Dictopia {
 }
 ```
 
-In the above code we make use of some Object Oriented Programming features of Vala including classes and the [namespace]()[FIX LINK] construct to scope blocks of code. The Dictopia code is exposed with the `Dictopia` namespace within which all code are encapsulated.
+In the above code we make use of some Object Oriented Programming features of Vala including classes and the [namespace](https://chebizarro.gitbooks.io/the-vala-manual/content/en/namespaces.html) construct to scope blocks of code. The Dictopia code is exposed with the `Dictopia` namespace within which all code are encapsulated.
 
 The `Dictopia.Application` class uses the GObject-Style construction as opposed to the Java or C# style of construction — Vala supports both. Within the `construct` constructor block we initialize the _so-called_ construct properties of `Granite.Application` such as application_id, program_name, build_version, etc., as well as, other customizations: application and developers information (see Granite documentation on [valadoc.org](http://valadoc.org)). In the `flags |= ApplicationFlags.FLAGS_NONE;` code, we append the flag using `|=` without setting it as the only argument to `flags`. The `Granite.Application` requires that you set the `application_id` property. A traditional way is to do com/net/org (dot) your companies name (dot) your application name (all in lower-case). In my case, I chose to use `com.aberba.dictopia` as my unique application ID. Supposing I create another application called __Downloader__, its unique ID will be `com.aberba.downloader`.         
 
-Within the `activate` methods is where we activate our application: initial window building, define startup functions, plugin loading, loading configurations, etc. Inside the activate method is where we will place almost all our application logic among others. The `activate` method in `Dictopia.Application` is defined by overriding the the `activate` method of `Granite.Application`. In our case, we initialized a new `Gtk.AplicationWindow` and band it to `Dictopia.Application` by passing it as the `this` argument — `this` references `Dictopia.Application`. The `Gtk.ApplicationWindow` is described in the GTK+ documentation as below;
+Within the `activate` method is where you would activate your application: initial window building, define startup functions, plugin loading, loading configurations, etc. Inside the activate method is where we will place almost all our application logic among others. The `activate` method in `Dictopia.Application` is defined by overriding the the `activate` method of `Granite.Application`. In our case, we initialized a new `Gtk.AplicationWindow` and band it to `Dictopia.Application` by passing it as the `this` argument — `this` references `Dictopia.Application`. The `Gtk.ApplicationWindow` class is described in the GTK+ documentation as below;
 
 > _"GtkApplicationWindow is a Window subclass that offers some extra functionality for better integration with Application features. Notably, it can handle both the application menu as well as the menubar"_. See the GTK+ reference for further details.
 
