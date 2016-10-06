@@ -27,7 +27,7 @@ Note that the language and information here are my own opinion, and I do not rep
   - [x] Creating mock-ups, drawing icons, and prototyping
   - [ ] Finalizing your designs
   
-- Chapter Three: Coding Your Application (Tutorials)
+- [Chapter Three: Coding Your Application (Tutorials)](chapter_03.md)
 
   - [] Creating and structuring a project
   - [] Diving into Vala and GTK+

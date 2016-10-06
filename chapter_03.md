@@ -69,17 +69,101 @@ The code above initializes GTK+ using `Gtk.init ();`, which accept the command l
 
 To compile this program, we have to pass the GTK+ package (`gtk+-3.0`), as a command-line argument since we are now using GTK+ GUI toolkit in the code. You can now run the app using `./main` as usual.
 
-![A demo GTK+ application window](images/window.png)
+![A demo application window](images/window.png)
 
-### Using GTK+ `Application` class
-Using `Gtk.init ()` and `Gtk.main ()` to initialize and run a GTK+ application works all right, but the `Gtk.Application` class offers a more convenient option. According to the GTK+ documentation;
+## Using the Granite extension
 
->_"Currently, GtkApplication handles GTK+ initialization, application uniqueness, session management, provides some basic scriptability and desktop shell integration by exporting actions and menus and manages a list of toplevel windows whose life-cycle is automatically tied to the life-cycle of your application"_. See the GTK+ reference for more details.
+### Using Granite `Application` class
+Using `Gtk.init ()` and `Gtk.main ()` to initialize and run a GTK+ application works all right, but the `Granite.Application` class (as subclass of Gtk.Application) offers a more convenient option. According to the GTK+ documentation;
 
-To make the use of `Gtk.Application` more practical, we will be creating a basic dictionary application called `Dictopia`. Building Dictopia will provide a real-world development experience. The wireframe and mock-up of Dictopia was already demonstrated in Chapter Two, so we will go ahead to the coding part. We could put all the code in the `main.vala` file, but it is much convenient write it in a  separate file, which is in-line with the elementary OS reference guide. Create a new file named `Application.vala` in the `src` directory. The contents of the file is prefixed with the [GPL legal header](https://elementary.io/docs/code/reference#gpl-header) <sup>^</sup> and the following code;
+>_"Currently, GtkApplication handles GTK+ initialization, application uniqueness, session management, provides some basic scriptability and desktop shell integration by exporting actions and menus and manages a list of toplevel windows whose life-cycle is automatically tied to the life-cycle of your application"_. See the GTK+ reference for further details.
+
+The Granite.Application class is the base class of all Granite-based applications and it adds more functionality on-top of Gtk.Application. `Granite.Application` is customised for elementary OS application development so it is _highly_ recommended to use it instead of `Gtk.Application.
+
+To make the use of `Granite.Application` more practical, we will be creating a basic dictionary application called `Dictopia`. Building Dictopia will provide a real-world development experience. The wireframe and mock-up of Dictopia was already demonstrated in Chapter Two, so we will go ahead to the coding part. We could put all the code in the `main.vala` file, but it is much convenient to write it in a  separate file. This style of coding introduces [Object Oriented Programming]()[FIX LINK] and is in-line with the elementary OS reference guide. Create a new file named `Application.vala` in the `src` directory. The contents of the file is prefixed with the [GPL legal header](https://elementary.io/docs/code/reference#gpl-header) <sup>^</sup>;
+
+```txt
+/* 
+* Copyright (c) 2011-2016 Lawrence Aberba (https://github.com/laberba/)
+*
+* This program is free software; you can redistribute it and/or
+* modify it under the terms of the GNU General Public
+* License as published by the Free Software Foundation; either
+* version 2 of the License, or (at your option) any later version.
+*
+* This program is distributed in the hope that it will be useful,
+* but WITHOUT ANY WARRANTY; without even the implied warranty of
+* MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+* General Public License for more details.
+*
+* You should have received a copy of the GNU General Public
+* License along with this program; if not, write to the
+* Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+* Boston, MA 02111-1307, USA.
+*
+* Authored by: Lawrence Aberba <karabutaworld@gmail.com>
+*/
+```
+
+This declares that this code is backed by the GPL license. Make sure you replace the name, email address and website URL with your own.
 
 > ^ Usually, a source code has a legal backing which states the author and the legal restrictions placed on the usage of the source code. There are several [licensing options]()[FIX LINK] available and you are free to choose any for your code. I however, will use the [GPL license](http://www.gnu.org/licenses/) for all source code in this guide.
 
-```vala
+After the license, you can then add the following code;
 
+```vala
+namespace Dictopia {
+
+    class Application: Granite.Application {
+        
+        construct {
+            /*
+                You may also use;
+                    ApplicationFlags.HANDLES_OPEN
+                    ApplicationFlags.HANDLES_COMMAND_LINE;
+            */
+            flags |= ApplicationFlags.FLAGS_NONE;
+
+            application_id      = "com.aberba.dictopia";
+            program_name        = "Dictopia";
+            exec_name           = "dictopia";
+
+            build_version       = "0.1"; 
+            app_years           = "2016";
+            app_icon            = "application-default-icon"; //use the default fallback
+            app_launcher        = ""; // we will set this later
+
+            main_url            = "";
+            bug_url             = "";
+            help_url            = "";
+            translate_url       = "";
+
+            about_authors       = {"Lawrence Aberba <karabutaworld@gmail.com>"};
+            about_documenters   = {"Lawrence Aberba <karabutaworld@gmail.com>"};
+            about_artists       = {"Lawrence Aberba <karabutaworld@gmail.com>"};
+            about_comments      = "A simple dictionary application";
+            about_translators   = "translator-credits";
+            about_license_type  = Gtk.License.GPL_3_0;
+        }
+
+        public override void activate () {
+            var window = new Gtk.ApplicationWindow (this);
+            window.title = "Demo Application";
+            window.window_position = Gtk.WindowPosition.CENTER;
+            window.set_default_size (400, 200);
+            
+            window.show_all ();
+        }
+    }
+}
 ```
+
+In the above code we make use of some Object Oriented Programming features of Vala including classes and the [namespace]()[FIX LINK] construct to scope blocks of code. The Dictopia code is exposed with the `Dictopia` namespace within which all code are encapsulated.
+
+The `Dictopia.Application` class uses the GObject-Style construction as opposed to the Java or C# style of construction — Vala supports both. Within the `construct` constructor block we initialize the _so-called_ construct properties of `Granite.Application` such as application_id, program_name, build_version, etc., as well as, other customizations: application and developers information (see Granite documentation on [valadoc.org](http://valadoc.org)). In the `flags |= ApplicationFlags.FLAGS_NONE;` code, we append the flag using `|=` without setting it as the only argument to `flags`. The `Granite.Application` requires that you set the `application_id` property. A traditional way is to do com/net/org (dot) your companies name (dot) your application name (all in lower-case). In my case, I chose to use `com.aberba.dictopia` as my unique application ID. Supposing I create another application called __Downloader__, its unique ID will be `com.aberba.downloader`.         
+
+Within the `activate` methods is where we activate our application: initial window building, define startup functions, plugin loading, loading configurations, etc. Inside the activate method is where we will place almost all our application logic among others. The `activate` method in `Dictopia.Application` is defined by overriding the the `activate` method of `Granite.Application`. In our case, we initialized a new `Gtk.AplicationWindow` and band it to `Dictopia.Application` by passing it as the `this` argument — `this` references `Dictopia.Application`. The `Gtk.ApplicationWindow` is described in the GTK+ documentation as below;
+
+> _"GtkApplicationWindow is a Window subclass that offers some extra functionality for better integration with Application features. Notably, it can handle both the application menu as well as the menubar"_. See the GTK+ reference for further details.
+
+Since Gtk.ApplicationWindow is a subclass of Gtk.Window, we then set it's basic properties such as title, window position, width and height.
