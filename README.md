@@ -29,8 +29,8 @@ Note that the language and information here are my own opinion, and I do not rep
   
 - [Chapter Three: Coding Your Application (Tutorials)](chapter_03.md)
 
-  - [] Creating and structuring a project
-  - [] Diving into Vala and GTK+
+  - [x] Creating and structuring a project
+  - [x] Diving into Vala and GTK+
   - [] Using the Granite extension
   - [] Using the cmake build system
   - [] Developing sample applications
