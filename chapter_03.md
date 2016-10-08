@@ -21,16 +21,14 @@ demo-app/
             main.vala    
 ```
 
-As you can see, the `demo-app` directory being the project root has a sub-directory, `src`, which contains a single file named `main.vala`. Inside the `src` directory is where all Vala source files will be placed. This is the most basic structure project could have. We will add more directories to the project root as we expand our basic application. The `main.vala` file will contain the initial code of the application which will server as entry point.
+As you can see, the `demo-app` directory being the project root has a sub-directory, `src`, which contains a single file named `main.vala`. Inside the `src` directory is where all Vala source files will be placed. This is the most basic structure project could have. We will add more directories to the project root as we expand our basic application. The `main.vala` file will contain the initial code of the application which will serve as entry point.
 
-Now that we have the project structure set-up, it is time to install the _development libraries_ as provided in the official elementary OS [Getting Stated Tutorial](https://elementary.io/docs/code/getting-started#development-libraries). 
-
-You can install the development libraries in your terminal using `sudo apt build-dep granite-demo`. As indicated in [Chapter One](chapter_01.md), there a several development tools available for development. I will be working on elementary OS 0.4 Loki, using Scratch (the default text editor) and Terminal —  all are pre-installed.
+Now that we have the project structure setup, it is time to install the development libraries as provided in the official elementary OS [Getting Started Tutorial](https://elementary.io/docs/code/getting-started#development-libraries). You can install the development libraries in your terminal using `sudo apt-get build-dep granite-demo`. As indicated in [Chapter One](chapter_01.md), there a several development tools available for development. I will be working on elementary OS 0.4 Loki, using Scratch (the default text editor) and Terminal —  all are pre-installed.
 
 ## Diving into Vala and GTK+
 
 ### A basic GTK+ demo
-Now that we have the basic required setup, it is time to write some Vala and GTK+ code. Open the `demo-app` project in Scratch, and write the following basic vala code in `main.vala` <sup>*</sup>.
+Finally, it is time to write some Vala and GTK+ code. Open the `demo-app` project in Scratch, and write the following basic vala code in `main.vala` <sup>*</sup>.
 
 ```vala
 int main (string[] args) {
@@ -39,15 +37,15 @@ int main (string[] args) {
 }
 ```
 
-The code above is a simple vala program made up of `int main()`, the main loop, which contains `stdout.printf ("Hello, World!\n");` which prints the string `Hello, World` to the screen and returns `0` - `0` informs the  Operating System of a successful execution without any errors. 
+The code above is a simple vala program made up of the `main` function, the entry point of every Vala program, which contains the code `stdout.printf ("Hello, World!\n");` that prints `Hello, World` to the screen and returns `0` —  `0` informs the  Operating System of a successful execution without any errors. 
 
 To compile this program, navigate to `~/workspace/vala/demo-app` in Terminal and enter the command `valac src/main.vala` which compile the program using the Vala compiler. You can now test the program using the command `./main` <sup>#</sup>.
 
 > \* The coding convention used in this guide is based on the [elementary OS  reference guide](https://elementary.io/docs/code/reference).
 
-> \# As I indicated earlier in the [introduction](README.md), the guide is not meant to teach you Vala and GTK+ programming. It is assumed you already have a basic knowledge and understanding of the above. We will be making more use of the command-line henceforth to compile our programs as we continue to add more functionality. When your encounter and error when compiling or running the program, please double check to make sure you type everything correctly.
+> \# As I indicated earlier in the [introduction](README.md), the guide is not meant to teach you Vala and GTK+ programming. It is assumed you already have a basic knowledge and understanding of the above. We will be making more use of the command-line henceforth to compile our programs as we continue to add more functionality. When you encounter an error when compiling or running the program, please double-check to make sure you type everything correctly.
  
-Now that we have been able to compile and run a basic Vala program, we are now ready to write some GTK+ code which will launch a window. Again open the `main.vala` file and enter the following code;
+Now that we have been able to compile and run a basic Vala program, we are now ready to write some GTK+ code which will launch a window. Again open the `main.vala` file and replace its content with the following code;
 
 ```vala
 int main (string[] args) {
@@ -58,27 +56,27 @@ int main (string[] args) {
     window.window_position = Gtk.WindowPosition.CENTER;
     window.set_default_size (400, 200);
     window.destroy.connect (Gtk.main_quit);
-    window.show_all (); // Show window and all child widgets to the screen
+    window.show_all (); // displays window and all its child widgets to the screen
  
     Gtk.main (); // Runs the GTK+ main event loop
     return 0;
 }
 ```
 
-The code above initializes GTK+ using `Gtk.init ();`, which accept the command line argument `args` as a `ref` parameter (see GTK+ reference at valadoc.org for detailed explanation of `Gtk.init ()`). We then create a GTK+ window, set the window title, the window position on the screen, and it's default width and height. We then register the `Gtk.main ()` method (function) to be executed when the user clicks the close button of the window.
+The code above initializes GTK+ using `Gtk.init`, which accept the command line argument `args` as a `ref` parameter (see GTK+ reference at valadoc.org for detailed explanation of `Gtk.init`). We then create a GTK+ window, set the window title, the window position on the screen, and its default width and height. We then register the `Gtk.main_quit` method (function) to be executed when the user clicks the close button of the window.
 
-To compile this program, we have to pass the GTK+ package (`gtk+-3.0`), as a command-line argument since we are now using GTK+ GUI toolkit in the code. You can now run the app using `./main` as usual.
+To compile this program, we have to pass the GTK+ package (`gtk+-3.0`), as a command-line argument since we are now using the GTK+ GUI toolkit in the code. You can now run the app using `./main` as usual.
 
 ![A demo application window](images/window.png)
 
 ## Using the Granite extension
 
 ### Using Granite `Application` class
-Using `Gtk.init ()` and `Gtk.main ()` to initialize and run a GTK+ application works all right, but the `Granite.Application` class (as subclass of Gtk.Application) offers a more convenient option. According to the GTK+ documentation;
+Using `Gtk.init` and `Gtk.main` to initialize and run a GTK+ application works alright, but the `Granite.Application` class (as subclass of Gtk.Application) offers a more convenient option. According to the GTK+ documentation;
 
 >_"Currently, GtkApplication handles GTK+ initialization, application uniqueness, session management, provides some basic scriptability and desktop shell integration by exporting actions and menus and manages a list of toplevel windows whose life-cycle is automatically tied to the life-cycle of your application"_. See the GTK+ reference for further details.
 
-The Granite.Application class is the base class of all Granite-based applications and it adds more functionality on-top of Gtk.Application. `Granite.Application` is customised for elementary OS application development so it is _highly_ recommended to use it instead of `Gtk.Application.
+The `Granite.Application` class is the base class of all Granite-based applications and it adds more functionality on-top of Gtk.Application. `Granite.Application` is customised for elementary OS application development so it is _highly_ recommended to use it instead of `Gtk.Application.
 
 To make the use of `Granite.Application` more practical, we will be creating a basic dictionary application called `Dictopia`. Building Dictopia will provide a real-world development experience. The wireframe and mock-up of Dictopia was already demonstrated in Chapter Two, so we will go ahead to the coding part. We could put all the code in the `main.vala` file, but it is much convenient to write it in a  separate file. This style of coding introduces [Object Oriented Programming](https://chebizarro.gitbooks.io/the-vala-manual/content/en/object_oriented_programming.html) and is in-line with the elementary OS reference guide. Create a new file named `Application.vala` in the `src` directory. The contents of the file is prefixed with the [GPL legal header](https://elementary.io/docs/code/reference#gpl-header) <sup>^</sup>;
 
@@ -166,4 +164,4 @@ Within the `activate` method is where you would activate your application: initi
 
 > _"GtkApplicationWindow is a Window subclass that offers some extra functionality for better integration with Application features. Notably, it can handle both the application menu as well as the menubar"_. See the GTK+ reference for further details.
 
-Since Gtk.ApplicationWindow is a subclass of Gtk.Window, we then set it's basic properties such as title, window position, width and height.
+Since Gtk.ApplicationWindow is a subclass of Gtk.Window, we then set its basic properties such as title, window position, width and height.
