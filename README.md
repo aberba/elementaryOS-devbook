@@ -31,9 +31,9 @@ Note that the language and information here are my own opinion, and I do not rep
 
   - [x] Creating and structuring a project
   - [x] Diving into Vala and GTK+
-  - [] Using the Granite extension
-  - [] Using the cmake build system
-  - [] Developing sample applications
+  - [ ] Using the Granite extension
+  - [ ] Using the cmake build system
+  - [ ] Developing sample applications
 
 - Chapter Four: Getting Your Application Ready for the Real World
 
