@@ -261,19 +261,24 @@ You must now include the `window.vala` file in the command to compile the code. 
 The headerbar of Dictopia contains widgets such as the forward and back buttons, the bookmarks buttons (star), a search entry and an application menu. Open the `HeaderBar.vala` file and add the code for those widgets;
 
 ```vala
+
 namespace Dictopia {
 
     class Widgets.HeaderBar: Gtk.HeaderBar {
-        private Gtk.Application application;
+        Dictopia.Application app;
+
         private Granite.Widgets.ModeButton mode_button;
+        private Gtk.Button bookmark_button;
         private Gtk.SearchEntry search_entry;
+        private Granite.Widgets.AppMenu menu_button;
 
 
-        public HeaderBar (Gtk.Application application) {
-            this.application = application;
+        public HeaderBar (Dictopia.Application app) {
+            this.app = app;
+
             this.title = "Dictopia";
             this.show_close_button = true;
-
+            
             this.build_ui ();
         }
 
@@ -285,25 +290,27 @@ namespace Dictopia {
             this.pack_start (mode_button);
 
             // Bookmark button
-            var bookmark_btn = new Gtk.Button.from_icon_name ("help-about");
-            this.pack_start (bookmark_btn);
+            bookmark_button = new Gtk.Button.from_icon_name ("help-about");
+            this.pack_start (bookmark_button);
 
             // Search entry
-            var search_entry = new Gtk.SearchEntry ();
+            search_entry = new Gtk.SearchEntry ();
             search_entry.placeholder_text = "Search Word or Phrase";
             this.pack_end (search_entry);
 
-            // Application menu
+            // search_entry.activate.connect (() => {
+            //  stdout.printf(search_entry.get_text ());
+            // });
+            
+            // Application menu items
             var menu = new Gtk.Menu ();
-            var menu_item_preferences = new Gtk.MenuItem.with_label ("Preferences");
-            menu.add(menu_item_preferences);
 
-            var app_menu = new Granite.Widgets.AppMenu.with_app (this.application, menu);
-
-            // About menu item
-            var about_menu_item = app_menu.about_item;
-            this.pack_end (app_menu);
+            // Application menu gear button
+            var menu_button = new Granite.Widgets.AppMenu.with_app (this.app, menu);
+            this.pack_end (menu_button);
         }
+
+
     }
 }
 ```
