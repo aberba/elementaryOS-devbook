@@ -1,7 +1,7 @@
 # Preface
 
 > ## Note
-> This book is a work-in-progress and I'm currently doing a major overhaul for elementary OS Juno development. You can support my work with [Card Payment](https://rave.flutterwave.com/pay/aberba-open). Your support will enable me put more time into it and make it more awesome for everyone.
+> This book is a work-in-progress and I'm currently doing a major overhaul for elementary OS Juno development. You can support my work on [Patreon](https://www.patreon.com/aberba) or [Direct Card Payment](https://rave.flutterwave.com/pay/aberba-open). Your support will enable me put more time into it and make it more awesome for everyone.
 
 ![elementary Os](/images/elementary-os.png)
 
